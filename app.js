@@ -2,25 +2,32 @@ import express from 'express'
 
 const app = express()
 
-// routes
+// set template engine and specify extension
+
+app.set('view engine', 'ejs')
+
+// source for static 
+app.use(express.static('public'))
+
+// routestocu
 // homepage
 app.get('/', (req, res) => {
-res.send('home page')
+res.render('index')
 })
 
 // about
 app.get('/about', (req, res) => {
-    res.send('about page')
+    res.render('about')
 })
 
 // signup
 app.get('/signup', (req, res) => {
-    res.send('You can sign up here')
+    res.render('signup')
 })
 
 // 404 error
 app.get('*', (req, res) => {
-    res.send('404\nPage not found!')
+    res.render('404')
 })
 
 
