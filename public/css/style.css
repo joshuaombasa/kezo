@@ -1,0 +1,11 @@
+@font-face {
+    font-family: but;
+    src: url('but.ttf');
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: but;
+}
