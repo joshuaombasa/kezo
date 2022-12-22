@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/header') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Document</title>
-</head>
-
-<body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/signup">Signup</a></li>
-        </ul>
-    </nav>
     <h1>This is the about page</h1>
     <img src="/assets/dogadmin.jpg" alt="">
 
-</body>
+    <%# const languages = ['Java', 'Go', 'PHP', 'JavaScript', 'Python', 'C++', 'Rust'] %>
 
-</html>
+    <ul>
+
+        <% for(let language of languages) { %>
+            
+
+             <% if(language.length > 4) { %>
+                <li><%= language %></li>
+               <% }  else {%>
+                <p>.........</p>
+                <% } %>
+       <% } %>
+
+    </ul>
+
+ <%- include('partials/footer') %>
