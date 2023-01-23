@@ -3,6 +3,13 @@
 
    <main id="note" class="container">
     <h2><%= note.title %></h2>
+    <small><em><%= note.created_at %></em></small>
     <p><%= note.body %></p>
+    <div>
+        <a href="/edit/<%= note.id %>" class="btn" id="edit-btn">Edit note</a>
+        <form action="/delete/<%= note.id%>" method="post">
+            <input type="submit" value="Delete note" class="btn" id="delete-btn">
+        </form>
+    </div>
    </main>
 <% include('partials/footer') %>

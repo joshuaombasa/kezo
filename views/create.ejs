@@ -1,13 +1,13 @@
 <%- include('partials/header') %>
     <%- include('partials/nav') %>
 
-    <main>
+    <main class="container" id="create">
         <h1>Create a note</h1>
         <form action="/create" method="post">
             <label for="">Title</label>
-            <input type="text" name="title" id="">
+            <input class="form-input" type="text" name="title" id="">
             <label for="">Body</label>
-            <textarea name="body" id="" cols="30" rows="10"></textarea>
+            <textarea class="form-input" name="body" id="" cols="30" rows="20"></textarea>
             <input type="submit" value="Add Note">
         </form>
     </main>
