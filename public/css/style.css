@@ -11,7 +11,7 @@
 }
 
 .container {
-    padding-left: 150px ;
+    padding-left: 150px;
     padding-right: 150px;
 }
 
@@ -67,3 +67,82 @@ nav li {
 #home img {
     width: 100%;
 }
+
+/* notes */
+
+#notes h3 {
+    margin-bottom: 10px;
+}
+
+#notes a {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+}
+
+#notes a:hover {
+    text-decoration: underline;
+}
+
+/* end. note */
+
+/* note */
+#note small {
+    color: #808080;
+
+}
+
+#note p {
+    margin: 5px 0;
+    text-align: justify;
+}
+
+#note div {
+    display: flex;
+}
+
+#note .btn {
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 13px;
+
+}
+
+#note #edit-btn {
+    background-color: #008000;
+    border: 1px solid #008000;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+#note #delete-btn {
+    background-color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+/* end. note */
+
+
+/* create/edit */
+
+#create form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+#create .form-input {
+    padding: 4px;
+    margin-bottom: 5px;
+}
+
+#create input[type="submit"] {
+    color: #fff;
+    width: max-content;
+    padding: 4px 8px;
+    font-size: 13px;
+    background-color: #008000;
+    border: 1px solid #008000;
+}
+
+/* end create/edit */
