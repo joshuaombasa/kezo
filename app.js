@@ -77,6 +77,49 @@ app.post('/create', (req, res)=> {
 }
 )
 
+// display edit a note form
+
+app.get('/edit/:id', (req,res) => {
+     let sql = 'SELECT * FROM notes WHERE id = ?'
+     connection.query(
+        sql, [parseInt(req.params.id)], (error,results) => {
+res.render('edit', {note:results[0]})
+        }
+     )
+})
+
+// submit edit a note form 
+app.post('/edit/:id', (req,res) => {
+    const note = {
+        title: req.body.title,
+        body: req.body.body
+
+    }
+    let sql = 'UPDATE notes SET title = ?, body = ? WHERE id = ?'
+    connection.query(
+        sql,
+        [note.title, note.body, parseInt(req.params.id)],
+        (error, results) => {
+            res.redirect(`/note/${req.params.id}`)
+        }
+    )
+}
+)
+
+
+// delete a note
+
+app.post('/delete/:id', (req,res) => {
+    let sql = 'DELETE FROM notes WHERE id = ?'
+    connection.query(
+        sql, [parseInt(req.params.id)],
+        (error, results) => {
+            res.redirect('/notes')
+        }
+    )
+})
+
+
 // 404 error
 app.get('*', (req, res) => {
     res.render('404')
