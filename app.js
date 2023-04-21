@@ -83,7 +83,6 @@ app.get('/edit/:id', (req,res) => {
      let sql = 'SELECT * FROM notes WHERE id = ?'
      connection.query(
         sql, [parseInt(req.params.id)], (error,results) => {
-            
 res.render('edit', {note:results[0]})
         }
      )
