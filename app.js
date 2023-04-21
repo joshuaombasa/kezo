@@ -106,7 +106,6 @@ app.post('/edit/:id', (req,res) => {
 }
 )
 
-
 // delete a note
 
 app.post('/delete/:id', (req,res) => {
