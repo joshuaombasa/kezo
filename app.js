@@ -88,8 +88,6 @@ res.render('edit', {note:results[0]})
      )
 })
 
-
-
 // submit edit a note form 
 app.post('/edit/:id', (req,res) => {
     const note = {
