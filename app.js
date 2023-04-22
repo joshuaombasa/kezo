@@ -53,6 +53,7 @@ app.get('/note/:id', (req, res) => {
     
 })
 
+
 // display create a note form
 app.get('/create', (req, res) => {
     res.render('create')
@@ -116,6 +117,7 @@ app.post('/delete/:id', (req,res) => {
         }
     )
 })
+
 
 // 404 error
 app.get('*', (req, res) => {
