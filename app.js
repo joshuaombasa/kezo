@@ -39,19 +39,19 @@ app.get('/notes', (req, res) => {
     
 })
 
-// // view a single note
-// app.get('/note/:id', (req, res) => {
-//     // retrieve note from notes
-//     let sql = 'SELECT * FROM notes WHERE id = ?'
-//     connection.query(
-//         sql,
-//          [parseInt(req.params.id)],
-//          (error, results) => {
-//             res.render('note', {note:results[0]})
-//         }
-//     )
+// view a single note
+app.get('/note/:id', (req, res) => {
+    // retrieve note from notes
+    let sql = 'SELECT * FROM notes WHERE id = ?'
+    connection.query(
+        sql,
+         [parseInt(req.params.id)],
+         (error, results) => {
+            res.render('note', {note:results[0]})
+        }
+    )
     
-// })
+})
 
 
 // display create a note form
