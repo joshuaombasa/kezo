@@ -28,16 +28,16 @@ res.render('index')
 })
 
 // view all notes
-// app.get('/notes', (req, res) => {
-//     // retrieve all notes from notes table
-//     let sql = 'SELECT * FROM notes'
-//     connection.query(
-//         sql, (error, results) => {
-//             res.render('notes', {notes: results})
-//         }
-//     )
+app.get('/notes', (req, res) => {
+    // retrieve all notes from notes table
+    let sql = 'SELECT * FROM notes'
+    connection.query(
+        sql, (error, results) => {
+            res.render('notes', {notes: results})
+        }
+    )
     
-// })
+})
 
 // view a single note
 app.get('/note/:id', (req, res) => {
