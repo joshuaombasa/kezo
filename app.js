@@ -93,7 +93,6 @@ app.post('/edit/:id', (req,res) => {
     const note = {
         title: req.body.title,
         body: req.body.body
-
     }
     let sql = 'UPDATE notes SET title = ?, body = ? WHERE id = ?'
     connection.query(
