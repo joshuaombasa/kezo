@@ -24,7 +24,7 @@ app.use(express.urlencoded({extended: true}))
 // routestocu
 // homepage
 app.get('/', (req, res) => {
-res.render('index')
+    res.render('index')
 })
 
 // view all notes
