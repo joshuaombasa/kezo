@@ -39,6 +39,7 @@ app.get('/notes', (req, res) => {
     
 })
 
+
 // view a single note
 app.get('/note/:id', (req, res) => {
     // retrieve note from notes
