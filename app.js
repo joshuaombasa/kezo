@@ -4,12 +4,13 @@ import mysql from 'mysql'
 const app = express()
 
 // create a db connection
-const connection = mysql.createConnection({
+const dbConfig = {
     host: 'localhost',
     user: 'root',
     password: '',
     database: 'kezo'
-})
+}
+const connection = mysql.createConnection(dbConfig)
 
 // set template engine and specify extension
 
