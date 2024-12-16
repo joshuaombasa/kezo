@@ -20,7 +20,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 // configuration to accept form information
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 
 // routestocu
 // homepage
@@ -34,10 +34,10 @@ app.get('/notes', (req, res) => {
     let sql = 'SELECT * FROM notes'
     connection.query(
         sql, (error, results) => {
-            res.render('notes', {notes: results})
+            res.render('notes', { notes: results })
         }
     )
-    
+
 })
 
 
@@ -47,12 +47,12 @@ app.get('/note/:id', (req, res) => {
     let sql = 'SELECT * FROM notes WHERE id = ?'
     connection.query(
         sql,
-         [parseInt(req.params.id)],
-         (error, results) => {
-            res.render('note', {note:results[0]})
+        [parseInt(req.params.id)],
+        (error, results) => {
+            res.render('note', { note: results[0] })
         }
     )
-    
+
 })
 
 
@@ -62,7 +62,7 @@ app.get('/create', (req, res) => {
 })
 
 // submit ceate a note form
-app.post('/create', (req, res)=> {
+app.post('/create', (req, res) => {
     const note = {
         title: req.body.title,
         body: req.body.body
@@ -81,17 +81,17 @@ app.post('/create', (req, res)=> {
 
 // display edit a note form
 
-app.get('/edit/:id', (req,res) => {
-     let sql = 'SELECT * FROM notes WHERE id = ?'
-     connection.query(
-        sql, [parseInt(req.params.id)], (error,results) => {
-res.render('edit', {note:results[0]})
+app.get('/edit/:id', (req, res) => {
+    let sql = 'SELECT * FROM notes WHERE id = ?'
+    connection.query(
+        sql, [parseInt(req.params.id)], (error, results) => {
+            res.render('edit', { note: results[0] })
         }
-     )
+    )
 })
 
 // submit edit a note form 
-app.post('/edit/:id', (req,res) => {
+app.post('/edit/:id', (req, res) => {
     const note = {
         title: req.body.title,
         body: req.body.body
@@ -109,7 +109,7 @@ app.post('/edit/:id', (req,res) => {
 
 // delete a note
 
-app.post('/delete/:id', (req,res) => {
+app.post('/delete/:id', (req, res) => {
     let sql = 'DELETE FROM notes WHERE id = ?'
     connection.query(
         sql, [parseInt(req.params.id)],
@@ -118,7 +118,6 @@ app.post('/delete/:id', (req,res) => {
         }
     )
 })
-
 
 // 404 error
 app.get('*', (req, res) => {
